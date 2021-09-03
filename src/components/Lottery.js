@@ -39,13 +39,11 @@ const Lottery = () => {
             <div className="card-body">
                 <p className="card-text">{data.title}</p>
                 <h5 className="card-title">{data.first}{ " "}{data.last}</h5>
-                <a href="#" className="btn btn-primary">Try your Luck</a>
+                <button onClick={() => window.location.reload(false)}>Try your Luck</button>
             </div>
         </div>
 
     )
 }
-
-
 
 export default Lottery;
