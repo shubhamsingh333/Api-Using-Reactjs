@@ -1,9 +1,10 @@
-import React, { useEffect , useState} from 'react'
+import React, { useEffect, useState } from 'react'
 // import './Lottery.css'
+
 
 const Lottery = () => {
 
-    const [data , setData] = useState([]);
+    const [data, setData] = useState([]);
 
     const getLotteryData = async () => {
         try {
@@ -18,31 +19,33 @@ const Lottery = () => {
         } catch (err) {
             console.log(err);
 
-        }  
+        }
     }
-    
 
-    useEffect(() => {   
+
+    useEffect(() => {
         getLotteryData();
 
     }, []);
 
 
     return (
-        <>
-            <section>
 
-                <h1> LIVE </h1>
-                <h2> Lottery TRACKER</h2>  
-                <p>{data.first}</p>
-                
-                <img src={data.first} alt="" />
 
-                
-            </section>
-        </>
+        <div className="card text-center">
+            <div className="card-header">
+                Lottery
+            </div>
+            <div className="card-body">
+                <p className="card-text">{data.title}</p>
+                <h5 className="card-title">{data.first}{ " "}{data.last}</h5>
+                <a href="#" className="btn btn-primary">Try your Luck</a>
+            </div>
+        </div>
+
     )
 }
+
 
 
 export default Lottery;
